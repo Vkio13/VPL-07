@@ -1,7 +1,7 @@
 #include <iostream>
 #include "intruso.hpp"
 
-// olá bruno eu consegui
+// olá kaique tudo bom
 
 int main(){
     int num_entradas, i;
