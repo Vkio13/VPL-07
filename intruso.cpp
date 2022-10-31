@@ -1,5 +1,6 @@
 #include <map>
 #include <vector>
+#include <string>
 #include "intruso.h"
 
 class Intruso{
