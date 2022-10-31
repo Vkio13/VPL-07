@@ -1,0 +1,1 @@
+string crack_senha(//);
