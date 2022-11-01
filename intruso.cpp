@@ -42,20 +42,29 @@ class Intruso{
                 }
             }
         }
-        std::string crack_senha(){
+                std::string crack_senha(){
             // Com base em vector<char> digitadas;
             std::string senhaVazada;
             for (i=0;i<5;i++){
+                //Comparar o 1° dígito da senha 1 com o 1° da senha 2
                 if(digitadas[0][2*1] == digitadas[1][2*i]){
                     senhaVazada[2*i] = digitadas[0][2*i];
                     senhaVazada[2*i+1] = ' ';
-                }else{if(digitadas[0][2*1] == digitadas[1][2*i+1])
+                }
+                //Comparar o 1° dígito da senha 1 com o 2° da senha 2
+                else{if(digitadas[0][2*1] == digitadas[1][2*i+1]){
                     senhaVazada[2*i] = digitadas[0][2*i];
                     senhaVazada[2*i+1] = ' ';
-                }else{if(digitadas[0][2*1+1] == digitadas[1][2*i])
+                    }
+                }
+                //Comparar o 2° dígito da senha 1 com o 1° da senha 2
+                else{if(digitadas[0][2*1+1] == digitadas[1][2*i]){
                     senhaVazada[2*i] = digitadas[0][2*i+1];
                     senhaVazada[2*i+1] = ' ';
-                }else{if(digitadas[0][2*1+1] == digitadas[1][2*i+1])
+                    }
+                }
+                //Compara o 2° dígito da senha 1 com o 2° da senha 2
+                else{if(digitadas[0][2*1+1] == digitadas[1][2*i+1])
                     senhaVazada[2*i] = digitadas[0][2*i+1];
                     senhaVazada[2*i+1] = ' ';
                 }
