@@ -5,8 +5,7 @@
 
 void Intruso::set_senha_vazada(std::string vazou){
     std::vector<char> senha;
-    std::cout<<"1";
-    for(int i=20; i<30; i++){
+    for(int i=20; i<=30; i++){
         if(vazou[i]!=' '){
             switch(vazou[i]){
                 case 'A':{
@@ -35,35 +34,22 @@ void Intruso::set_senha_vazada(std::string vazou){
                     break;
                 }
             }
-            digitadas.push_back(senha);
         }
     }
+    digitadas.push_back(senha);
 }
-                
+
 std::string Intruso::crack_senha(){
     // Com base em vector<char> digitadas;
     std::string senhaVazada;
-    for (int i=0;i<5;i++){
-        //Comparar o 1° dígito da senha 1 com o 1° da senha 2
-        if(digitadas[0][2*1] == digitadas[1][2*i]){
-            senhaVazada[2*i] = digitadas[0][2*i];
-            senhaVazada[2*i+1] = ' ';
+    for (int i=0;i<6;i++){
+        if(digitadas[0][2*i] == digitadas[1][2*i] || digitadas[0][2*i] == digitadas[1][2*i+1]){
+            senhaVazada += digitadas[0][2*i];
+            senhaVazada += ' ';
+        }else{
+            senhaVazada += digitadas[0][2*i+1];
+            senhaVazada += ' ';
         }
-        //Comparar o 1° dígito da senha 1 com o 2° da senha 2
-        else if(digitadas[0][2*1] == digitadas[1][2*i+1]){
-            senhaVazada[2*i] = digitadas[0][2*i];
-            senhaVazada[2*i+1] = ' ';
-            }
-        //Comparar o 2° dígito da senha 1 com o 1° da senha 2
-        else if(digitadas[0][2*1+1] == digitadas[1][2*i]){
-            senhaVazada[2*i] = digitadas[0][2*i+1];
-            senhaVazada[2*i+1] = ' ';
-            }
-        //Compara o 2° dígito da senha 1 com o 2° da senha 2
-        else if(digitadas[0][2*1+1] == digitadas[1][2*i+1]){
-            senhaVazada[2*i] = digitadas[0][2*i+1];
-            senhaVazada[2*i+1] = ' ';
-            }
-        return senhaVazada;
     }
+    return senhaVazada;
 }
