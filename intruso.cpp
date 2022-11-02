@@ -40,7 +40,7 @@ void Intruso::set_senha_vazada(std::string vazou){
 }
 
 std::string Intruso::crack_senha(){
-    // Com base em vector<char> digitadas;
+    // std::vector<std::vector<char>>digitadas;;
     std::string senhaVazada;
     for (int i=0;i<6;i++){
         bool gustavo = true;
