@@ -43,12 +43,21 @@ std::string Intruso::crack_senha(){
     // Com base em vector<char> digitadas;
     std::string senhaVazada;
     for (int i=0;i<6;i++){
-        if(digitadas[0][2*i] == digitadas[1][2*i] || digitadas[0][2*i] == digitadas[1][2*i+1]){
+        bool gustavo = true;
+        for(int g=1; g<digitadas.size(); g++){
+            if(digitadas[0][2*i] == digitadas[g][2*i] 
+            || digitadas[0][2*i] == digitadas[g][2*i+1]){
+            }else{
+                gustavo = false;
+                break;
+            }
+        }
+        if(gustavo){
             senhaVazada += digitadas[0][2*i];
-            senhaVazada += ' ';
+            senhaVazada += " ";
         }else{
             senhaVazada += digitadas[0][2*i+1];
-            senhaVazada += ' ';
+            senhaVazada += " ";
         }
     }
     return senhaVazada;
